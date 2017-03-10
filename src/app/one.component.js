@@ -13,13 +13,16 @@ var core_1 = require('@angular/core');
 var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
+        this.applyClass = true;
+        this.redColor = true; // true: red and false: green
         this.image = 'http://lorempixel.com/200/200';
-        this.value = 'Do you marry me?';
+        this.style = true;
     }
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <p>Don't use binding: My name is <strong>DLX</strong></p>\n    <p>Use binding: My name is <strong>{{name}}</strong>\n    <p>Don't use binding: I gift you a picture:<br/>\n    <img src=\"http://lorempixel.com/200/200\" />\n    </p>\n    <p>Use binding: I gift you a picture:<br>\n    <img [src]='image' /></p>\n    <p>Don't use binding: I send you a message:<br>\n    <input type=\"text\" value=\"Are you my girlfriend?\"/></p>\n    <p>Use binding: I send you a message:<br>\n    <input type=\"text\" [value]=\"value\"/></p>\n    "
+            template: "\n    <h3 [class.blueCl]=\"applyClass\">My name is {{name}}</h3>\n    <h4 [style.color]=\"redColor?'red':'green'\">I want to gift you a picture:</h4>\n    <img [src]=\"image\" />\n    <p [class.style-1]=\"style\">I love you :)</p>\n    ",
+            styles: ["\n    .blueCl {\n        color: blue;\n    }\n\n    .style-1 {\n        font-family: Candara, sans-serif;\n        color: white;\n        background-color: black;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);
