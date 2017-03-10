@@ -1,4 +1,4 @@
-// One way binding
+// Event Binding
 
 import { Component } from '@angular/core';
 
@@ -6,18 +6,13 @@ import { Component } from '@angular/core';
     selector: 'my-app1',
     template: `
     <h2>My name is {{name}}</h2>
-    <button (click)="OnClick()">OnClick Event</button>
-    <button (mouseover)="MouseOver(val.value)">MouseOver Event</button>
-    <input type="text" #val/>
+    <p>Press Your Name and It will show your Full name:</p>
+    Press First Name: <input type="text" [(ngModel)]="fname"/> 
+    Press Last name: <input type="text" [(ngModel)]="lname"/><br/><br/>
+    Your Full Name: {{fname}} {{lname}} 
     `
 })
 
 export class OneComponent {
     name = 'DLX';
-    OnClick() {
-        console.log("Clicked");
-    }
-    MouseOver(val:string) {
-        console.log(val);
-    }
 }  

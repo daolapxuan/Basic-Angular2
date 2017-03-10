@@ -1,4 +1,4 @@
-// One way binding
+// Event Binding
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -14,16 +14,10 @@ var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
     }
-    OneComponent.prototype.OnClick = function () {
-        console.log("Clicked");
-    };
-    OneComponent.prototype.MouseOver = function (val) {
-        console.log(val);
-    };
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h2>My name is {{name}}</h2>\n    <button (click)=\"OnClick()\">OnClick Event</button>\n    <button (mouseover)=\"MouseOver(val.value)\">MouseOver Event</button>\n    <input type=\"text\" #val/>\n    "
+            template: "\n    <h2>My name is {{name}}</h2>\n    <p>Press Your Name and It will show your Full name:</p>\n    Press First Name: <input type=\"text\" [(ngModel)]=\"fname\"/> \n    Press Last name: <input type=\"text\" [(ngModel)]=\"lname\"/><br/><br/>\n    Your Full Name: {{fname}} {{lname}} \n    "
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);
