@@ -13,16 +13,17 @@ var core_1 = require('@angular/core');
 var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
-        this.applyClass = true;
-        this.redColor = true; // true: red and false: green
-        this.image = 'http://lorempixel.com/200/200';
-        this.style = true;
     }
+    OneComponent.prototype.OnClick = function () {
+        console.log("Clicked");
+    };
+    OneComponent.prototype.MouseOver = function (val) {
+        console.log(val);
+    };
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h3 [class.blueCl]=\"applyClass\">My name is {{name}}</h3>\n    <h4 [style.color]=\"redColor?'red':'green'\">I want to gift you a picture:</h4>\n    <img [src]=\"image\" />\n    <p [class.style-1]=\"style\">I love you :)</p>\n    ",
-            styles: ["\n    .blueCl {\n        color: blue;\n    }\n\n    .style-1 {\n        font-family: Candara, sans-serif;\n        color: white;\n        background-color: black;\n    }\n    "]
+            template: "\n    <h2>My name is {{name}}</h2>\n    <button (click)=\"OnClick()\">OnClick Event</button>\n    <button (mouseover)=\"MouseOver(val.value)\">MouseOver Event</button>\n    <input type=\"text\" #val/>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);

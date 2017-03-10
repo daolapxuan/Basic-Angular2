@@ -5,29 +5,19 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'my-app1',
     template: `
-    <h3 [class.blueCl]="applyClass">My name is {{name}}</h3>
-    <h4 [style.color]="redColor?'red':'green'">I want to gift you a picture:</h4>
-    <img [src]="image" />
-    <p [class.style-1]="style">I love you :)</p>
-    `,
-    styles: [`
-    .blueCl {
-        color: blue;
-    }
-
-    .style-1 {
-        font-family: Candara, sans-serif;
-        color: white;
-        background-color: black;
-    }
-    `]
+    <h2>My name is {{name}}</h2>
+    <button (click)="OnClick()">OnClick Event</button>
+    <button (mouseover)="MouseOver(val.value)">MouseOver Event</button>
+    <input type="text" #val/>
+    `
 })
 
 export class OneComponent {
     name = 'DLX';
-    applyClass = true;
-    redColor = true;   // true: red and false: green
-    image = 'http://lorempixel.com/200/200';
-    style = true;
-    
+    OnClick() {
+        console.log("Clicked");
+    }
+    MouseOver(val:string) {
+        console.log(val);
+    }
 }  
