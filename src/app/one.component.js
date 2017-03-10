@@ -16,7 +16,8 @@ var OneComponent = (function () {
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h2>My name is {{name}}</h2>\n    "
+            template: "\n    <h2>My name is {{name}}</h2>\n    <h3>This is OneComponent</h3>\n    ",
+            styles: ['h3 {color: blue;']
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);
