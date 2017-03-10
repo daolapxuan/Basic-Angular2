@@ -13,11 +13,20 @@ var core_1 = require('@angular/core');
 var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
+        this.showIfLine = true;
     }
+    OneComponent.prototype.showIf = function (value) {
+        if (value == true) {
+            value = false;
+        }
+        if (value == false) {
+            value = true;
+        }
+    };
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h2>My name is {{name}}</h2>\n    <p>Press Your Name and It will show your Full name:</p>\n    Press First Name: <input type=\"text\" [(ngModel)]=\"fname\"/> \n    Press Last name: <input type=\"text\" [(ngModel)]=\"lname\"/><br/><br/>\n    Your Full Name: {{fname}} {{lname}} \n    "
+            template: "\n    <h2>My name is {{name}}</h2>\n    <h3 *ngIf=\"showIfLine\" #show>This is ngIf Directive Line.</h3>\n    <button (click)=\"showIf(show)\">Show</button>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);

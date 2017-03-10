@@ -6,13 +6,22 @@ import { Component } from '@angular/core';
     selector: 'my-app1',
     template: `
     <h2>My name is {{name}}</h2>
-    <p>Press Your Name and It will show your Full name:</p>
-    Press First Name: <input type="text" [(ngModel)]="fname"/> 
-    Press Last name: <input type="text" [(ngModel)]="lname"/><br/><br/>
-    Your Full Name: {{fname}} {{lname}} 
+    <h3 *ngIf="showIfLine" #show>This is ngIf Directive Line.</h3>
+    <button (click)="showIf(show)">Show</button>
     `
 })
 
 export class OneComponent {
     name = 'DLX';
-}  
+
+    showIfLine = true;
+
+    showIf(value:boolean) {
+        if (value == true) {
+            value = false;
+        }
+        if (value == false) {
+            value = true;
+        }
+    }
+}    
