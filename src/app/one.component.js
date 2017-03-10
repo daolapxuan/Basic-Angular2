@@ -1,3 +1,4 @@
+// One way binding
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -12,12 +13,13 @@ var core_1 = require('@angular/core');
 var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
+        this.image = 'http://lorempixel.com/200/200';
+        this.value = 'Do you marry me?';
     }
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h2>My name is {{name}}</h2>\n    <h3>This is OneComponent</h3>\n    ",
-            styles: ['h3 {color: blue;']
+            template: "\n    <p>Don't use binding: My name is <strong>DLX</strong></p>\n    <p>Use binding: My name is <strong>{{name}}</strong>\n    <p>Don't use binding: I gift you a picture:<br/>\n    <img src=\"http://lorempixel.com/200/200\" />\n    </p>\n    <p>Use binding: I gift you a picture:<br>\n    <img [src]='image' /></p>\n    <p>Don't use binding: I send you a message:<br>\n    <input type=\"text\" value=\"Are you my girlfriend?\"/></p>\n    <p>Use binding: I send you a message:<br>\n    <input type=\"text\" [value]=\"value\"/></p>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);
