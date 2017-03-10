@@ -1,4 +1,4 @@
-// Event Binding
+// Two Ways Binding
 
 import { Component } from '@angular/core';
 
@@ -16,3 +16,8 @@ import { Component } from '@angular/core';
 export class OneComponent {
     name = 'DLX';
 }  
+
+/*
+How to:
+- Q1: Import two numbers from keyboard and export Sum of those two numbers
+ */
