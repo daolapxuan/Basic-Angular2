@@ -13,14 +13,18 @@ var core_1 = require('@angular/core');
 var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
-        this.showIfLine = true;
-        this.color = 'red';
-        this.colors = ["red", "green", "blue"];
+        this.showIfLine = true; // ngIf
+        this.color = 'red'; // ngSwitch
+        this.colors = ["red", "green", "blue"]; // ngFor
     }
+    // Turning On/Off ngIf function
+    OneComponent.prototype.switch = function () {
+        this.showIfLine = !this.showIfLine;
+    };
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h2>My name is {{name}}</h2>\n    <button>On/Off</button>\n    <h3>This is ngIf Directive</h3>\n    <h4 *ngIf=\"showIfLine\">This is ngIf Directive Line.</h4>\n    <h3>this is ngSwitch Directive</h3>\n    Import color: <input type=\"text\" #cl/>\n    <div [ngSwitch]=\"color\">\n        <p style=\"color:red;\" *ngSwitchCase=\"'red'\">This is color red</p>\n        <p style=\"color:green;\" *ngSwitchCase=\"'green'\">This is color green</p>\n        <p style=\"color:blue;\" *ngSwitchCase=\"'blue'\">This is color blue</p>\n        <p *ngSwitchDefault>No color</p>\n    </div>\n    <p>Export elements of an array, with elements in class:</p>\n    <ul>\n        <li *ngFor=\"let color of colors\">{{color}}</li>\n    </ul>\n    ",
+            template: "\n    <h2>My name is {{name}}</h2>\n    <h3>ngIf Directive:</h3>\n    <h4 *ngIf=\"showIfLine\">This is ngIf Directive Line.</h4>\n    <button (click)=\"switch()\">On/Off ngIf</button>\n    <h3>ngSwitch Directive:</h3>\n    Import color: <input type=\"text\" #cl/>\n    <div [ngSwitch]=color>\n        <p style=\"color:red;\" *ngSwitchCase=\"'red'\">This is color red</p>\n        <p style=\"color:green;\" *ngSwitchCase=\"'green'\">This is color green</p>\n        <p style=\"color:blue;\" *ngSwitchCase=\"'blue'\">This is color blue</p>\n        <p *ngSwitchDefault>No color</p>\n    </div>\n    <p>Export elements of an array, with elements in class:</p>\n    <ul>\n        <li *ngFor=\"let color of colors\">{{color}}</li>\n    </ul>\n    ",
             styles: ["\n    h3 {\n        color: grey;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])

@@ -6,12 +6,12 @@ import { Component } from '@angular/core';
     selector: 'my-app1',
     template: `
     <h2>My name is {{name}}</h2>
-    <button>On/Off</button>
-    <h3>This is ngIf Directive</h3>
+    <h3>ngIf Directive:</h3>
     <h4 *ngIf="showIfLine">This is ngIf Directive Line.</h4>
-    <h3>this is ngSwitch Directive</h3>
+    <button (click)="switch()">On/Off ngIf</button>
+    <h3>ngSwitch Directive:</h3>
     Import color: <input type="text" #cl/>
-    <div [ngSwitch]="color">
+    <div [ngSwitch]=color>
         <p style="color:red;" *ngSwitchCase="'red'">This is color red</p>
         <p style="color:green;" *ngSwitchCase="'green'">This is color green</p>
         <p style="color:blue;" *ngSwitchCase="'blue'">This is color blue</p>
@@ -32,11 +32,16 @@ import { Component } from '@angular/core';
 export class OneComponent {
     name = 'DLX';
 
-    showIfLine = true;
+    showIfLine = true; // ngIf
 
-    color = 'red';
+    color = 'red'; // ngSwitch
 
-    colors: string[] = ["red", "green", "blue"];
+    colors: string[] = ["red", "green", "blue"]; // ngFor
+
+    // Turning On/Off ngIf function
+    switch() {
+        this.showIfLine = !this.showIfLine;
+    }
 }
 
 /*
