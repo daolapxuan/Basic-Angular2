@@ -1,4 +1,4 @@
-// Structural Directive
+// Attribute Directive
 "use strict";
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -13,15 +13,24 @@ var core_1 = require('@angular/core');
 var OneComponent = (function () {
     function OneComponent() {
         this.name = 'DLX';
-        this.showIfLine = true;
-        this.color = 'red';
-        this.colors = ["red", "green", "blue"];
+        // On/Off fields of .class1 and .class2 in CSS
+        this.cOne = true;
+        this.cTwo = true;
+        // Style of ngStyle
+        this.style = "italic";
+        this.color = "grey";
+        this.size = "20px";
     }
+    // On/Off function
+    OneComponent.prototype.switch = function () {
+        this.cOne = !this.cOne;
+        this.cTwo = !this.cTwo;
+    };
     OneComponent = __decorate([
         core_1.Component({
             selector: 'my-app1',
-            template: "\n    <h2>My name is {{name}}</h2>\n    <button>On/Off</button>\n    <h3>This is ngIf Directive</h3>\n    <h4 *ngIf=\"showIfLine\">This is ngIf Directive Line.</h4>\n    <h3>this is ngSwitch Directive</h3>\n    Import color: <input type=\"text\" #cl/>\n    <div [ngSwitch]=\"color\">\n        <p style=\"color:red;\" *ngSwitchCase=\"'red'\">This is color red</p>\n        <p style=\"color:green;\" *ngSwitchCase=\"'green'\">This is color green</p>\n        <p style=\"color:blue;\" *ngSwitchCase=\"'blue'\">This is color blue</p>\n        <p *ngSwitchDefault>No color</p>\n    </div>\n    <p>Export elements of an array, with elements in class:</p>\n    <ul>\n        <li *ngFor=\"let color of colors\">{{color}}</li>\n    </ul>\n    ",
-            styles: ["\n    h3 {\n        color: grey;\n    }\n    "]
+            template: "\n    <h2>My name is {{name}}</h2>\n    <p [ngClass]=\"{class1:cOne, class2:cTwo}\">This ngClass applies CSS</p>\n    <button (click)=\"switch()\">On/Off CSS</button>\n    <p [ngStyle]=\"{'font-style':style, 'background-color':color, 'font-size':size}\">This text will be applied to ngStyle</p>\n    ",
+            styles: ["\n    h3 {\n        color: grey;\n    }\n    .class1 {\n        color: white;\n        font-family: arial;\n    }\n    .class2 {\n        background-color: black;\n        font-size: 20px;\n    }\n    "]
         }), 
         __metadata('design:paramtypes', [])
     ], OneComponent);

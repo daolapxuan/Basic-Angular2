@@ -1,4 +1,4 @@
-// Structural Directive
+// Attribute Directive
 
 import { Component } from '@angular/core';
 
@@ -6,25 +6,21 @@ import { Component } from '@angular/core';
     selector: 'my-app1',
     template: `
     <h2>My name is {{name}}</h2>
-    <button>On/Off</button>
-    <h3>This is ngIf Directive</h3>
-    <h4 *ngIf="showIfLine">This is ngIf Directive Line.</h4>
-    <h3>this is ngSwitch Directive</h3>
-    Import color: <input type="text" #cl/>
-    <div [ngSwitch]="color">
-        <p style="color:red;" *ngSwitchCase="'red'">This is color red</p>
-        <p style="color:green;" *ngSwitchCase="'green'">This is color green</p>
-        <p style="color:blue;" *ngSwitchCase="'blue'">This is color blue</p>
-        <p *ngSwitchDefault>No color</p>
-    </div>
-    <p>Export elements of an array, with elements in class:</p>
-    <ul>
-        <li *ngFor="let color of colors">{{color}}</li>
-    </ul>
+    <p [ngClass]="{class1:cOne, class2:cTwo}">This ngClass applies CSS</p>
+    <button (click)="switch()">On/Off CSS</button>
+    <p [ngStyle]="{'font-style':style, 'background-color':color, 'font-size':size}">This text will be applied to ngStyle</p>
     `,
     styles: [`
     h3 {
         color: grey;
+    }
+    .class1 {
+        color: white;
+        font-family: arial;
+    }
+    .class2 {
+        background-color: black;
+        font-size: 20px;
     }
     `]
 })
@@ -32,11 +28,20 @@ import { Component } from '@angular/core';
 export class OneComponent {
     name = 'DLX';
 
-    showIfLine = true;
+    // On/Off fields of .class1 and .class2 in CSS
+    cOne = true;
+    cTwo = true;
+    
+    // Style of ngStyle
+    style = "italic";
+    color = "grey";
+    size = "20px";
 
-    color = 'red';
-
-    colors: string[] = ["red", "green", "blue"];
+    // On/Off function
+    switch() {
+        this.cOne = !this.cOne;
+        this.cTwo = !this.cTwo;
+    }
 }
 
 /*
