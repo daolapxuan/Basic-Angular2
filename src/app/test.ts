@@ -1,28 +1,38 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 
 @Component({
-    selector: 'my-app1',
+    selector: 'test',
+    /*template: `
+    <p>This is text: {{test}}</p>
+    `*/
+    // @Output
     template: `
-    <h2>{{vi}}</h2>
+    <p>This is text: {{test}}</p>
+
     <p>Child Component name: {{name}}</p>
     <button [disabled]="voted" (click)="vote(true)">Agree</button>
     <button [disabled]="voted" (click)="vote(false)">Disagree</button>
     <p>Result: {{voted}}</p>
     `
+     
 })
 
-export class OneComponent {
+export class Test {
+    // @Input
+    @Input() test: string;
 
+    
+    // @Output:
     @Input() name: string;
     @Output() onVote = new EventEmitter<boolean>();
 
     voted: boolean = false;
-    
-    // vote function
+
     vote(agree: boolean) {
         this.voted = true;
         this.onVote.emit(agree);
     }
+    
 
     // Set a new name for first element of names array
     setName(n: string) {
