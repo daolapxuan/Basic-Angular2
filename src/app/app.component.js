@@ -11,20 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
-        this.text1 = 'This is a text uses Uppercase Pipe';
-        this.text2 = 'This is a text uses Lowercase Pipe';
-        // today = new Date();
-        this.today = Date.now();
-        // percent
-        this.a = 0.123;
-        this.b = 1.234567;
-        // decimal
-        this.e = 122.12345678901234567;
+        this.title = "Lesson 15: Building Form from Template";
     }
+    // Submit button
+    AppComponent.prototype.onSubmit = function (value) {
+        console.log(value);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>{{text1 | uppercase}}</h1>\n  <h2>{{text2 | lowercase}}</h2>\n  <p>Time now: {{today | date: 'fullDate'}}</p>\n  <p>Percent number: {{a | percent}}; {{b | percent:'5.3-7'}}</p>\n  <p>Decimal number: {{e | number: '5.4-8'}}</p>\n  <my-app1></my-app1>\n  "
+            templateUrl: 'app/app.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
