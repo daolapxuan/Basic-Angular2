@@ -11,12 +11,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
-        this.name = 'Thanh Vi';
+        this.title = 'Lesson 16: Form Validation';
     }
+    // Submit func
+    AppComponent.prototype.clickSubmit = function (value) {
+        console.log(value);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n  <h1>Hi {{name}}</h1>\n  <my-app1></my-app1>\n  "
+            templateUrl: 'app/app.component.html',
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);

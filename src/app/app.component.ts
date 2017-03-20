@@ -2,9 +2,14 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: `
-  <h1>Hi {{name}}</h1>
-  <my-app1></my-app1>
-  `
+  templateUrl: 'app/app.component.html',
 })
-export class AppComponent { name = 'Thanh Vi'; }
+
+export class AppComponent {
+  title = 'Lesson 16: Form Validation';
+
+  // Submit func
+  clickSubmit(value: any) {
+    console.log(value);
+  }
+}

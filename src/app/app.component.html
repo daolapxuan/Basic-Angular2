@@ -1,0 +1,74 @@
+<div class="container">
+    <div class="row">
+        <h1>{{title}}</h1>
+        <h2>Knowledge:</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>State</th>
+                    <th>Class If TRUE</th>
+                    <th>Class If FALSE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Control has been visited</td>
+                    <td>Ng-touched</td>
+                    <td>Ng-untouched</td>
+                </tr>
+                <tr>
+                    <td>Control's value has changed</td>
+                    <td>Ng-dirty</td>
+                    <td>Ng-pristine</td>
+                </tr>
+                <tr>
+                    <td>Control's value is valid</td>
+                    <td>Ng-valid</td>
+                    <td>Ng-invalid</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>Personal Information Form</h2>
+        <form #userForm="ngForm" (ngSubmit)="clickSubmit(userForm.value)">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" minlength="6" maxlength="20" #name="ngModel" name="name" required ngModel>
+                <!-- {{name.className}} -->
+                <div *ngIf="name.errors && (name.dirty || name.touched)" class="alert alert-danger">
+                    <div [hidden] = "!name.errors.required">
+                        Name is required
+                    </div>
+                    <div [hidden] = "!name.errors.minlength">
+                        Name has at least 6 characters
+                    </div>
+                    <div [hidden] = "!name.errors.maxlength">
+                        Name can't have more 20 characters
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" ngModel>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="text" class="form-control" name="phone" ngModel>
+            </div>
+            <div ngModelGroup="Address">
+                <div class="form-group">
+                    <label>Street</label>
+                    <input type="text" class="form-control" name="street" ngModel>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" class="form-control" name="city" ngModel>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Postal Code </label>
+                <input type="number" class="form-control" name="postalCode" ngModel>
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+    </div>
+</div>
