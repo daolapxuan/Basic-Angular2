@@ -9,18 +9,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var OneComponent = (function () {
-    function OneComponent() {
-        this.name = 'DLX';
+var EmployeeService = (function () {
+    function EmployeeService() {
     }
-    OneComponent = __decorate([
-        core_1.Component({
-            selector: 'my-app1',
-            template: "\n    <h2>Hello {{name}}</h2>\n    <h2>What will you do today?</h2>\n    <h2>Have you finished your 'List to do' yet?</h2>\n    <hr>\n    "
-        }), 
+    EmployeeService.prototype.getList = function () {
+        var employees1 = [
+            { Id: 1, Name: 'Đào Văn Dũng Tiến' },
+            { Id: 2, Name: 'Quách Thị Bê' },
+            { Id: 3, Name: 'Đào Thị Thanh Tâm' },
+            { Id: 4, Name: 'Đào Nam Huy' },
+            { Id: 5, Name: 'Đào Thị Văn Chương' },
+            { Id: 6, Name: 'Đào Thiện Khánh' },
+        ];
+        return employees1;
+    };
+    EmployeeService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], OneComponent);
-    return OneComponent;
+    ], EmployeeService);
+    return EmployeeService;
 }());
-exports.OneComponent = OneComponent;
-//# sourceMappingURL=one.component.js.map
+exports.EmployeeService = EmployeeService;
+//# sourceMappingURL=employee.service.js.map

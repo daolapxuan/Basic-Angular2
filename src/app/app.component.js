@@ -11,20 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = 'Lesson 17: Form Validation (2)';
-        // City list
-        this.cities = [
-            { Id: 1, Name: "An Giang" },
-            { Id: 2, Name: "Bến Tre" },
-            { Id: 3, Name: "Cần Thơ" },
-            { Id: 4, Name: "Hồ Chí Minh" },
-            { Id: 5, Name: "Vũng Tàu" }
-        ];
+        this.title = 'Lesson 18: Service';
     }
-    // Submit func
-    AppComponent.prototype.clickSubmit = function (value) {
-        console.log(value);
-    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
