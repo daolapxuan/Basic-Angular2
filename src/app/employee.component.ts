@@ -11,7 +11,7 @@ export class EmployeeComponent implements OnInit {
     employees: any[] = [
         { Id: 1, Name: 'Đào Lập Xuân' },
         { Id: 2, Name: 'Nguyễn Thị Thanh Vi' },
-        { Id: 3, Name: 'Mai Cẩm Tú' },
+        { Id: 3, Name: 'Mai Thị Cẩm Tú' },
         { Id: 4, Name: 'Nguyễn Trung Hiếu' }
     ];
 

@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  title = 'Lesson 18: Service';
+  title = 'Lesson 18: Services';
 
 }
